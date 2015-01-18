@@ -1,4 +1,4 @@
-# AES-OCB (Offset Codebook Mode) Ciphersuites for TLS
+# AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 
 This is the working area for the [IETF TLS Working
 Group](https://trac.tools.ietf.org/wg/tls) draft of
@@ -57,7 +57,7 @@ $ pip install xml2rfc
 ```
 
 You may also need to install kramdown-xml2rfc, which requires Ruby and can be
-installed using the roby package manager, `gem`:
+installed using the ruby package manager, `gem`:
 
 ```sh
 $ gem install kramdown-xml2rfc
