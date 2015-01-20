@@ -1,7 +1,7 @@
 ---
 title: AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 abbrev: AES-OCB Ciphersuites
-docname: draft-ietf-tls-aes-ocb-latest
+docname: draft-zauner-tls-aes-ocb-latest
 date: 2015-01-20
 category: std
 
@@ -89,7 +89,7 @@ interpreted as described in {{RFC2119}}.
 # Forward-secret AES-OCB Ciphersuites {#fssuites}
 The ciphersuites defined in this document are based on the AES-OCB
 authenticated encryption with associated data (AEAD) algorithms
-AEAD_AES_128_OCB_TAGLEN128 and AEAD_AES_256_OCB_TAGLEN128 described
+AEAD_AES_128_OCB_TAGLEN96 and AEAD_AES_256_OCB_TAGLEN96 described
 in {{RFC7253}}. The following forward-secret ciphersuites are defined:
 
       CipherSuite TLS_DHE_RSA_WITH_AES_128_OCB = {TBD1, TBD1}
