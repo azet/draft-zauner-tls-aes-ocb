@@ -2,7 +2,7 @@
 title: AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 abbrev: AES-OCB Ciphersuites
 docname: draft-ietf-tls-aes-ocb-latest
-date: 2015-01-18
+date: 2015-01-20
 category: std
 
 ipr: #XXX/TODO: IPRs 560, 1591, 1682, 1683
