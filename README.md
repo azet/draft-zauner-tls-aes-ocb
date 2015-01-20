@@ -1,10 +1,15 @@
 # AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 
+
+[![](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb.svg)](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb)
+
+
 This is the working area for the [IETF TLS Working
 Group](https://trac.tools.ietf.org/wg/tls) draft of
-AES-OCB (Offset Codebook Mode) Ciphersuites for TLS.
+AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 
-* [Editor's copy](https://azet.github.io/draft-ietf-tls-aes-ocb)
+
+* [Editor's copy](https://azet.github.io/draft-zauner-tls-aes-ocb)
 * [Working Group Draft]
   (https://tools.ietf.org/html/draft-ietf-tls-aes-ocb)
 
