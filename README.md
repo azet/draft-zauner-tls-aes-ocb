@@ -6,7 +6,7 @@
 
 This is the working area for the [IETF TLS Working
 Group](https://trac.tools.ietf.org/wg/tls) draft of
-AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
+AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS).
 
 
 * [Editor's copy](https://azet.github.io/draft-zauner-tls-aes-ocb)
