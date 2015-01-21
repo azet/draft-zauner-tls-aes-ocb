@@ -95,16 +95,16 @@ Table of Contents
    Data, or AEAD [RFC5116], adds the ability to check the integrity and
    authenticity of some associated data that is not encrypted.  This
    document utilizes the AEAD facility within TLS 1.2 [RFC5246] and the
-   AES-OCB-based AEAD algorithms defined in [RFC5116].  Additional AEAD
-   algorithms are defined, which use AES-OCB but which have shorter
-   authentication tags, and therefore are more suitable for use across
-   networks in which bandwidth is constrained and message sizes may be
-   small.
+   AES-OCB-based AEAD algorithms defined in [RFC5116].
 
    The ciphersuites defined in this document use ECDHE, DHE or Pre-
    Shared-Key (PSK) as their key establishment mechanism; these
    ciphersuites can be used with DTLS [RFC6347].  Since the abiltiy to
    use AEAD ciphers was introduced in DTLS version 1.2, the ciphersuites
+   defined in this document cannot be used with earlier versions of that
+   protocol.
+
+
 
 
 
@@ -113,9 +113,6 @@ Zauner                    Expires July 24, 2015                 [Page 2]
 
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
-
-   defined in this document cannot be used with earlier versions of that
-   protocol.
 
 2.  Conventions Used in This Document
 
@@ -161,6 +158,9 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    Function (PRF), which uses HMAC with the SHA-256 hash function.  The
    ECDSA-ECDHE, RSA-ECDHE and RSA-DHE key exchanges are performed as
    defined in [RFC5246].
+
+
+
 
 
 
