@@ -95,7 +95,7 @@ Table of Contents
    Data, or AEAD [RFC5116], adds the ability to check the integrity and
    authenticity of some associated data that is not encrypted.  This
    document utilizes the AEAD facility within TLS 1.2 [RFC5246] and the
-   AES-OCB-based AEAD algorithms defined in [RFC5116].
+   AES-OCB-based AEAD algorithms defined in [RFC5116] and [RFC7253].
 
    The ciphersuites defined in this document use ECDHE, DHE or Pre-
    Shared-Key (PSK) as their key establishment mechanism; these
