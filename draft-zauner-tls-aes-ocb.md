@@ -72,7 +72,7 @@ that is encrypted, provides a way to check its integrity and authenticity. Authe
 Encryption with Associated Data, or AEAD {{RFC5116}}, adds the ability to check the
 integrity and authenticity of some associated data that is not encrypted. This document
 utilizes the AEAD facility within TLS 1.2 {{RFC5246}} and the AES-OCB-based AEAD
-algorithms defined in {{RFC5116}}.
+algorithms defined in {{RFC5116}} and {{RFC7253}}.
 
 The ciphersuites defined in this document use ECDHE, DHE or Pre-Shared-Key (PSK) as their
 key establishment mechanism; these ciphersuites can be used with DTLS {{RFC6347}}. Since
