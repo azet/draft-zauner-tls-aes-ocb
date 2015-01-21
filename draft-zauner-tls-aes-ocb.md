@@ -146,11 +146,9 @@ for AEAD; for instance, the TLSCiphertext structure does not have the "aead" opt
 in TLS 1.1. Consequently, these ciphersuites MUST NOT be negotiated in older versions
 of TLS. Clients MUST NOT offer these cipher suites if they do not offer TLS 1.2 or
 later. Servers which select an earlier version of TLS MUST NOT select one of these
-ciphersuites. Because TLS has no way for the client to indicate that it supports
-TLS 1.2 but not earlier, a non-compliant server might potentially negotiate TLS 1.1
-or earlier and select one of the cipher suites in this document. Clients MUST check
-the TLS version and generate a fatal "illegal_parameter" alert if they detect an
-incorrect version.
+ciphersuites. A client MUST treat the selection of these cipher suites in combination
+with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error 
+and generate a fatal 'illegal_parameter' TLS alert.
 
 # IANA Considerations
 IANA is requested to assign the values for the ciphersuites defined in {{fssuites}}
