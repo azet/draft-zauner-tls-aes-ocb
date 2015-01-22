@@ -151,6 +151,8 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
         uint64 seq_num;
      } OCBNonce.
 
+   The record_iv_length is zero (0).
+
    In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the
    48-bit seq_num.
 
@@ -158,8 +160,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    Function (PRF), which uses HMAC with the SHA-256 hash function.  The
    ECDSA-ECDHE, RSA-ECDHE and RSA-DHE key exchanges are performed as
    defined in [RFC5246].
-
-
 
 
 
@@ -247,6 +247,12 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
 
    This document borrows heavily from [RFC5288] and [RFC6655].
 
+   Thanks to Martin Thompson for his suggested change on the client
+   negotation paragraph, Nikos Mavrogiannopoulos for the discussion on
+   PSK ciphersuites, Jack Lloyd for clarification on the
+   record_iv_length and the TLS Working Group in general for feedback
+   and discussion on this document.
+
 9.  References
 
 9.1.  Normative References
@@ -268,12 +274,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
               Counter Mode (GCM) Cipher Suites for TLS", RFC 5288,
               August 2008.
 
-   [RFC6066]  Eastlake, D., "Transport Layer Security (TLS) Extensions:
-              Extension Definitions", RFC 6066, January 2011.
-
-   [RFC6347]  Rescorla, E. and N. Modadugu, "Datagram Transport Layer
-              Security Version 1.2", RFC 6347, January 2012.
-
 
 
 
@@ -281,6 +281,12 @@ Zauner                    Expires July 24, 2015                 [Page 5]
 
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
+
+   [RFC6066]  Eastlake, D., "Transport Layer Security (TLS) Extensions:
+              Extension Definitions", RFC 6066, January 2011.
+
+   [RFC6347]  Rescorla, E. and N. Modadugu, "Datagram Transport Layer
+              Security Version 1.2", RFC 6347, January 2012.
 
    [RFC6655]  McGrew, D. and D. Bailey, "AES-CCM Cipher Suites for
               Transport Layer Security (TLS)", RFC 6655, July 2012.
@@ -306,12 +312,6 @@ Author's Address
    Independent
 
    Email: azet@azet.org
-
-
-
-
-
-
 
 
 
