@@ -11,7 +11,7 @@ AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS).
 
 * [Editor's copy](https://azet.github.io/draft-zauner-tls-aes-ocb)
 * [Working Group Draft]
-  (https://tools.ietf.org/html/draft-ietf-tls-aes-ocb)
+  (https://tools.ietf.org/html/draft-zauner-tls-aes-ocb)
 
 
 ## Contributing
