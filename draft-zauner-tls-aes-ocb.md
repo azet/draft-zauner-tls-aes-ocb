@@ -113,6 +113,9 @@ the "nonce" SHALL be 12 bytes long and is constructed as follows:
          uint64 seq_num;
       } OCBNonce.
 
+
+The record_iv_length is zero (0).
+
 In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the
 48-bit seq_num.
 
@@ -172,3 +175,7 @@ The IV construction in {{fssuites}} is designed to prevent nonce reuse.
 # Acknowledgements
 This document borrows heavily from {{RFC5288}} and {{RFC6655}}.
 
+Thanks to Martin Thompson for his suggested change on the client negotation paragraph,
+Nikos Mavrogiannopoulos for the discussion on PSK ciphersuites, Jack Lloyd for
+clarification on the record_iv_length and the TLS Working Group in general for
+feedback and discussion on this document.
