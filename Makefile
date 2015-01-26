@@ -172,7 +172,7 @@ ifeq (true,$(TRAVIS))
 	git clean -qfd
 	git pull -qf origin gh-pages --depth=5
 else
-	git checkout gh-pages
+	git checkout gh-pages -f
 	git pull
 endif
 	mv -f $(GHPAGES_TMP)/* $(CURDIR)
