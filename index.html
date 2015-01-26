@@ -579,9 +579,10 @@ ul.toc a:first-child {
      uint64 seq_num;
   } OCBNonce.
 </pre>
-<p id="rfc.section.3.p.5">The record_iv_length is zero (0).</p>
-<p id="rfc.section.3.p.6">In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the 48-bit seq_num.</p>
-<p id="rfc.section.3.p.7">These ciphersuites make use of the default TLS 1.2 Pseudorandom Function (PRF), which uses HMAC with the SHA-256 hash function.  The ECDSA-ECDHE, RSA-ECDHE and RSA-DHE key exchanges are performed as defined in <a href="#RFC5246">[RFC5246]</a>.</p>
+<p id="rfc.section.3.p.5">The nonce input to the AEAD is described above using the TLS presentation language. All values are represented in big-endian form when constructing the AEAD input.</p>
+<p id="rfc.section.3.p.6">The sequence number of a message is always known to the receiver through other means (either implicit protocol state or a per-message header in the case of DTLS), so the nonce construction used does not require any extra per-message information. Thus the record_iv_length is zero (0) for all ciphersuites defined in this document.</p>
+<p id="rfc.section.3.p.7">In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the 48-bit seq_num.</p>
+<p id="rfc.section.3.p.8">These ciphersuites make use of the default TLS 1.2 Pseudorandom Function (PRF), which uses HMAC with the SHA-256 hash function.  The ECDSA-ECDHE, RSA-ECDHE and RSA-DHE key exchanges are performed as defined in <a href="#RFC5246">[RFC5246]</a>.</p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#psksuites" id="psksuites">Pre-Shared-Key (PSK) AES-OCB Ciphersuites</a></h1>
 <p id="rfc.section.4.p.1">As in <a href="#fssuites">Section 3</a>, these ciphersuites follow <a href="#RFC7253">[RFC7253]</a>.  The PSK, ECDHE_PSK and DHE_PSK key exchanges are performed as specified in <a href="#RFC4279">[RFC4279]</a>. The following Pre-Shared-Key (PSK) ciphersuites are defined:</p>
 <pre>
@@ -607,7 +608,7 @@ ul.toc a:first-child {
 <p id="rfc.section.7.3.p.1">AES-OCB security requires that the &#8220;nonce&#8221; (number used once) is never reused.  The IV construction in <a href="#fssuites">Section 3</a> is designed to prevent nonce reuse.</p>
 <h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>
 <p id="rfc.section.8.p.1">This document borrows heavily from <a href="#RFC5288">[RFC5288]</a> and <a href="#RFC6655">[RFC6655]</a>.</p>
-<p id="rfc.section.8.p.2">Thanks to Martin Thompson for his suggested change on the client negotation paragraph, Nikos Mavrogiannopoulos for the discussion on PSK ciphersuites, Jack Lloyd for clarification on the record_iv_length and the TLS Working Group in general for feedback and discussion on this document.</p>
+<p id="rfc.section.8.p.2">The author would like to thank Martin Thompson for his suggested change on the client negotation paragraph, Nikos Mavrogiannopoulos and Peter Gutmann for the discussion on PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length and the TLS Working Group in general for feedback and discussion on this document.</p>
 <h1 id="rfc.references"><a href="#rfc.references">9.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">9.1.</a> Normative References</h1>
 <table>

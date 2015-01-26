@@ -69,7 +69,7 @@ Table of Contents
    4.  Pre-Shared-Key (PSK) AES-OCB Ciphersuites . . . . . . . . . .   4
    5.  Applicable TLS Versions . . . . . . . . . . . . . . . . . . .   4
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
-   7.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
+   7.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
      7.1.  (Perfect) Forward Secrecy . . . . . . . . . . . . . . . .   5
      7.2.  RSA as key-exchange . . . . . . . . . . . . . . . . . . .   5
      7.3.  Nonce reuse . . . . . . . . . . . . . . . . . . . . . . .   5
@@ -151,15 +151,15 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
         uint64 seq_num;
      } OCBNonce.
 
-   The record_iv_length is zero (0).
+   The nonce input to the AEAD is described above using the TLS
+   presentation language.  All values are represented in big-endian form
+   when constructing the AEAD input.
 
-   In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the
-   48-bit seq_num.
-
-   These ciphersuites make use of the default TLS 1.2 Pseudorandom
-   Function (PRF), which uses HMAC with the SHA-256 hash function.  The
-   ECDSA-ECDHE, RSA-ECDHE and RSA-DHE key exchanges are performed as
-   defined in [RFC5246].
+   The sequence number of a message is always known to the receiver
+   through other means (either implicit protocol state or a per-message
+   header in the case of DTLS), so the nonce construction used does not
+   require any extra per-message information.  Thus the record_iv_length
+   is zero (0) for all ciphersuites defined in this document.
 
 
 
@@ -169,6 +169,14 @@ Zauner                    Expires July 24, 2015                 [Page 3]
 
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
+
+   In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the
+   48-bit seq_num.
+
+   These ciphersuites make use of the default TLS 1.2 Pseudorandom
+   Function (PRF), which uses HMAC with the SHA-256 hash function.  The
+   ECDSA-ECDHE, RSA-ECDHE and RSA-DHE key exchanges are performed as
+   defined in [RFC5246].
 
 4.  Pre-Shared-Key (PSK) AES-OCB Ciphersuites
 
@@ -210,14 +218,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    registries.  IANA, please note that the DTLS-OK column should be
    marked as "Y" for each of these algorithms.
 
-7.  Security Considerations
-
-   The security considerations in [RFC5246] apply to this document as
-   well.  The remainder of this section describes security
-   considerations specific to the ciphersuites described in this
-   document.
-
-
 
 
 
@@ -225,6 +225,13 @@ Zauner                    Expires July 24, 2015                 [Page 4]
 
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
+
+7.  Security Considerations
+
+   The security considerations in [RFC5246] apply to this document as
+   well.  The remainder of this section describes security
+   considerations specific to the ciphersuites described in this
+   document.
 
 7.1.  (Perfect) Forward Secrecy
 
@@ -247,11 +254,12 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
 
    This document borrows heavily from [RFC5288] and [RFC6655].
 
-   Thanks to Martin Thompson for his suggested change on the client
-   negotation paragraph, Nikos Mavrogiannopoulos for the discussion on
-   PSK ciphersuites, Jack Lloyd for clarification on the
-   record_iv_length and the TLS Working Group in general for feedback
-   and discussion on this document.
+   The author would like to thank Martin Thompson for his suggested
+   change on the client negotation paragraph, Nikos Mavrogiannopoulos
+   and Peter Gutmann for the discussion on PSK ciphersuites, Jack Lloyd
+   for content on the clarification of the TLS Record IV length and the
+   TLS Working Group in general for feedback and discussion on this
+   document.
 
 9.  References
 
@@ -267,20 +275,19 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    [RFC5116]  McGrew, D., "An Interface and Algorithms for Authenticated
               Encryption", RFC 5116, January 2008.
 
-   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
-              (TLS) Protocol Version 1.2", RFC 5246, August 2008.
-
-   [RFC5288]  Salowey, J., Choudhury, A., and D. McGrew, "AES Galois
-              Counter Mode (GCM) Cipher Suites for TLS", RFC 5288,
-              August 2008.
-
-
 
 
 Zauner                    Expires July 24, 2015                 [Page 5]
 
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
+
+   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
+              (TLS) Protocol Version 1.2", RFC 5246, August 2008.
+
+   [RFC5288]  Salowey, J., Choudhury, A., and D. McGrew, "AES Galois
+              Counter Mode (GCM) Cipher Suites for TLS", RFC 5288,
+              August 2008.
 
    [RFC6066]  Eastlake, D., "Transport Layer Security (TLS) Extensions:
               Extension Definitions", RFC 6066, January 2011.
@@ -312,13 +319,6 @@ Author's Address
    Independent
 
    Email: azet@azet.org
-
-
-
-
-
-
-
 
 
 
