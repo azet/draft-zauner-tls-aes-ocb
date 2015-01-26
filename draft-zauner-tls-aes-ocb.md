@@ -113,8 +113,15 @@ the "nonce" SHALL be 12 bytes long and is constructed as follows:
          uint64 seq_num;
       } OCBNonce.
 
+The nonce input to the AEAD is described above using the TLS
+presentation language. All values are represented in big-endian form
+when constructing the AEAD input.
 
-The record_iv_length is zero (0).
+The sequence number of a message is always known to the receiver
+through other means (either implicit protocol state or a per-message
+header in the case of DTLS), so the nonce construction used does not
+require any extra per-message information. Thus the record_iv_length
+is zero (0) for all ciphersuites defined in this document.
 
 In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the
 48-bit seq_num.
@@ -175,7 +182,7 @@ The IV construction in {{fssuites}} is designed to prevent nonce reuse.
 # Acknowledgements
 This document borrows heavily from {{RFC5288}} and {{RFC6655}}.
 
-Thanks to Martin Thompson for his suggested change on the client negotation paragraph,
-Nikos Mavrogiannopoulos for the discussion on PSK ciphersuites, Jack Lloyd for
-clarification on the record_iv_length and the TLS Working Group in general for
-feedback and discussion on this document.
+The author would like to thank Martin Thompson for his suggested change on the client
+negotation paragraph, Nikos Mavrogiannopoulos and Peter Gutmann for the discussion on
+PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length
+and the TLS Working Group in general for feedback and discussion on this document.
