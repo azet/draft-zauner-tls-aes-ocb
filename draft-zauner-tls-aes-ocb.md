@@ -67,6 +67,10 @@ and Datagram TLS (DTLS) to provide confidentiality and data origin authenticatio
 The AES-OCB algorithm is highly parallelizable, provable secure and can be
 efficiently implemented in software and hardware providing high performance.
 
+Furthermore OCB Mode [OCB] for AES [AES] provides a high performance, constant-time
+AEAD alternative to existing and deployed block-cipher modes without the need for
+special plattform specific instructions.
+
 Authenticated encryption, in addition to providing confidentiality for the plaintext
 that is encrypted, provides a way to check its integrity and authenticity. Authenticated
 Encryption with Associated Data, or AEAD {{RFC5116}}, adds the ability to check the
