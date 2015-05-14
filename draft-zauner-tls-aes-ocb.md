@@ -152,7 +152,7 @@ The "nonce" input to the AEAD algorithm is identical to the one defined in
 Function (PRF), which uses HMAC with the SHA-256 hash function.
 
 # Applicable TLS Versions
-These ciphersuites make use of the authenticated encryption with additional data
+These ciphersuites make use of the authenticated encryption with associated data
 (AEAD) defined in TLS 1.2 {{RFC5288}}. Earlier versions of TLS do not have support
 for AEAD; for instance, the TLSCiphertext structure does not have the "aead" option
 in TLS 1.1. Consequently, these ciphersuites MUST NOT be negotiated in older versions
