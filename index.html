@@ -458,19 +458,21 @@ ul.toc a:first-child {
 <link href="#rfc.section.3" rel="Chapter" title="3 Forward-secret AES-OCB Ciphersuites"/>
 <link href="#rfc.section.4" rel="Chapter" title="4 Pre-Shared-Key (PSK) AES-OCB Ciphersuites"/>
 <link href="#rfc.section.5" rel="Chapter" title="5 Applicable TLS Versions"/>
-<link href="#rfc.section.6" rel="Chapter" title="6 IANA Considerations"/>
-<link href="#rfc.section.7" rel="Chapter" title="7 Security Considerations"/>
-<link href="#rfc.section.7.1" rel="Chapter" title="7.1 (Perfect) Forward Secrecy"/>
-<link href="#rfc.section.7.2" rel="Chapter" title="7.2 RSA as key-exchange"/>
-<link href="#rfc.section.7.3" rel="Chapter" title="7.3 Nonce reuse"/>
-<link href="#rfc.section.8" rel="Chapter" title="8 Acknowledgements"/>
-<link href="#rfc.references" rel="Chapter" title="9 References"/>
-<link href="#rfc.references.1" rel="Chapter" title="9.1 Normative References"/>
-<link href="#rfc.references.2" rel="Chapter" title="9.2 Informative References"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 Intellectual Propery Rights Issues"/>
+<link href="#rfc.section.6.1" rel="Chapter" title="6.1 IPR Claims"/>
+<link href="#rfc.section.7" rel="Chapter" title="7 IANA Considerations"/>
+<link href="#rfc.section.8" rel="Chapter" title="8 Security Considerations"/>
+<link href="#rfc.section.8.1" rel="Chapter" title="8.1 (Perfect) Forward Secrecy"/>
+<link href="#rfc.section.8.2" rel="Chapter" title="8.2 RSA key-exchange"/>
+<link href="#rfc.section.8.3" rel="Chapter" title="8.3 Nonce reuse"/>
+<link href="#rfc.section.9" rel="Chapter" title="9 Acknowledgements"/>
+<link href="#rfc.references" rel="Chapter" title="10 References"/>
+<link href="#rfc.references.1" rel="Chapter" title="10.1 Normative References"/>
+<link href="#rfc.references.2" rel="Chapter" title="10.2 Informative References"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
-  <meta name="generator" content="xml2rfc version 2.4.8 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.4.12 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Zauner, A." />
@@ -537,23 +539,25 @@ ul.toc a:first-child {
 <li>3.   <a href="#rfc.section.3">Forward-secret AES-OCB Ciphersuites</a></li>
 <li>4.   <a href="#rfc.section.4">Pre-Shared-Key (PSK) AES-OCB Ciphersuites</a></li>
 <li>5.   <a href="#rfc.section.5">Applicable TLS Versions</a></li>
-<li>6.   <a href="#rfc.section.6">IANA Considerations</a></li>
-<li>7.   <a href="#rfc.section.7">Security Considerations</a></li>
-<li>7.1.   <a href="#rfc.section.7.1">(Perfect) Forward Secrecy</a></li>
-<li>7.2.   <a href="#rfc.section.7.2">RSA as key-exchange</a></li>
-<li>7.3.   <a href="#rfc.section.7.3">Nonce reuse</a></li>
-<li>8.   <a href="#rfc.section.8">Acknowledgements</a></li>
-<li>9.   <a href="#rfc.references">References</a></li>
-<li>9.1.   <a href="#rfc.references.1">Normative References</a></li>
-<li>9.2.   <a href="#rfc.references.2">Informative References</a></li>
-<li><a href="#rfc.authors">Author's Address</a></li>
+<li>6.   <a href="#rfc.section.6">Intellectual Propery Rights Issues</a></li>
+<ul><li>6.1.   <a href="#rfc.section.6.1">IPR Claims</a></li>
+</ul><li>7.   <a href="#rfc.section.7">IANA Considerations</a></li>
+<li>8.   <a href="#rfc.section.8">Security Considerations</a></li>
+<ul><li>8.1.   <a href="#rfc.section.8.1">(Perfect) Forward Secrecy</a></li>
+<li>8.2.   <a href="#rfc.section.8.2">RSA key-exchange</a></li>
+<li>8.3.   <a href="#rfc.section.8.3">Nonce reuse</a></li>
+</ul><li>9.   <a href="#rfc.section.9">Acknowledgements</a></li>
+<li>10.   <a href="#rfc.references">References</a></li>
+<ul><li>10.1.   <a href="#rfc.references.1">Normative References</a></li>
+<li>10.2.   <a href="#rfc.references.2">Informative References</a></li>
+</ul><li><a href="#rfc.authors">Author's Address</a></li>
 
 
   </ul>
 
   <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
 <p id="rfc.section.1.p.1">This document describes the use of the Advanced Encryption Standard (AES) in the Offset Codebook Mode (OCB) of operation within Transport Layer Security (TLS) and Datagram TLS (DTLS) to provide confidentiality and data origin authentication.  The AES-OCB algorithm is highly parallelizable, provable secure and can be efficiently implemented in software and hardware providing high performance.</p>
-<p id="rfc.section.1.p.2">Furthermore OCB Mode <a href="#OCB">[OCB]</a> for AES <a href="#AES">[AES]</a> provides a high performance, constant-time AEAD alternative to existing and deployed block-cipher modes without the need for special plattform specific instructions.</p>
+<p id="rfc.section.1.p.2">Furthermore OCB Mode <a href="#OCB">[OCB]</a> for AES <a href="#AES">[AES]</a> provides a high performance, single-pass, constant-time AEAD alternative to existing and deployed block-cipher modes without the need for special plattform specific instructions.</p>
 <p id="rfc.section.1.p.3">Authenticated encryption, in addition to providing confidentiality for the plaintext that is encrypted, provides a way to check its integrity and authenticity. Authenticated Encryption with Associated Data, or AEAD <a href="#RFC5116">[RFC5116]</a>, adds the ability to check the integrity and authenticity of some associated data that is not encrypted. This document utilizes the AEAD facility within TLS 1.2 <a href="#RFC5246">[RFC5246]</a> and the AES-OCB-based AEAD algorithms defined in <a href="#RFC5116">[RFC5116]</a> and <a href="#RFC7253">[RFC7253]</a>.</p>
 <p id="rfc.section.1.p.4">The ciphersuites defined in this document use ECDHE, DHE or Pre-Shared-Key (PSK) as their key establishment mechanism; these ciphersuites can be used with DTLS <a href="#RFC6347">[RFC6347]</a>. Since the abiltiy to use AEAD ciphers was introduced in DTLS version 1.2, the ciphersuites defined in this document cannot be used with earlier versions of that protocol.</p>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#conventions-used-in-this-document" id="conventions-used-in-this-document">Conventions Used in This Document</a></h1>
@@ -596,22 +600,32 @@ ul.toc a:first-child {
 </pre>
 <p id="rfc.section.4.p.2">The &#8220;nonce&#8221; input to the AEAD algorithm is identical to the one defined in <a href="#fssuites">Section 3</a>. These ciphersuites make use of the default TLS 1.2 Pseudorandom Function (PRF), which uses HMAC with the SHA-256 hash function.</p>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#applicable-tls-versions" id="applicable-tls-versions">Applicable TLS Versions</a></h1>
-<p id="rfc.section.5.p.1">These ciphersuites make use of the authenticated encryption with additional data (AEAD) defined in TLS 1.2 <a href="#RFC5288">[RFC5288]</a>. Earlier versions of TLS do not have support for AEAD; for instance, the TLSCiphertext structure does not have the &#8220;aead&#8221; option in TLS 1.1. Consequently, these ciphersuites MUST NOT be negotiated in older versions of TLS. Clients MUST NOT offer these cipher suites if they do not offer TLS 1.2 or later. Servers which select an earlier version of TLS MUST NOT select one of these ciphersuites. A client MUST treat the selection of these cipher suites in combination with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error and generate a fatal &#8216;illegal_parameter&#8217; TLS alert.</p>
-<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
-<p id="rfc.section.6.p.1">IANA is requested to assign the values for the ciphersuites defined in <a href="#fssuites">Section 3</a> and <a href="#psksuites">Section 4</a> from the TLS and DTLS Ciphersuite registries. IANA, please note that the DTLS-OK column should be marked as &#8220;Y&#8221; for each of these algorithms.</p>
-<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#security-considerations" id="security-considerations">Security Considerations</a></h1>
-<p id="rfc.section.7.p.1">The security considerations in <a href="#RFC5246">[RFC5246]</a> apply to this document as well. The remainder of this section describes security considerations specific to the ciphersuites described in this document.</p>
-<h1 id="rfc.section.7.1"><a href="#rfc.section.7.1">7.1.</a> <a href="#perfect-forward-secrecy" id="perfect-forward-secrecy">(Perfect) Forward Secrecy</a></h1>
-<p id="rfc.section.7.1.p.1">With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in <a href="#psksuites">Section 4</a>, this document deals exclusively with ciphersuites that are inherently forward-secret.</p>
-<h1 id="rfc.section.7.2"><a href="#rfc.section.7.2">7.2.</a> <a href="#rsa-as-key-exchange" id="rsa-as-key-exchange">RSA as key-exchange</a></h1>
-<p id="rfc.section.7.2.p.1">No ciphersuite is defined in this document that makes use of RSA as key-exchange.</p>
-<h1 id="rfc.section.7.3"><a href="#rfc.section.7.3">7.3.</a> <a href="#nonce-reuse" id="nonce-reuse">Nonce reuse</a></h1>
-<p id="rfc.section.7.3.p.1">AES-OCB security requires that the &#8220;nonce&#8221; (number used once) is never reused.  The IV construction in <a href="#fssuites">Section 3</a> is designed to prevent nonce reuse.</p>
-<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>
-<p id="rfc.section.8.p.1">This document borrows heavily from <a href="#RFC5288">[RFC5288]</a> and <a href="#RFC6655">[RFC6655]</a>.</p>
-<p id="rfc.section.8.p.2">The author would like to thank Martin Thompson for his suggested change on the client negotiation paragraph, Nikos Mavrogiannopoulos and Peter Gutmann for the discussion on PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length and the TLS Working Group in general for feedback and discussion on this document.</p>
-<h1 id="rfc.references"><a href="#rfc.references">9.</a> References</h1>
-<h1 id="rfc.references.1"><a href="#rfc.references.1">9.1.</a> Normative References</h1>
+<p id="rfc.section.5.p.1">These ciphersuites make use of the authenticated encryption with associated data (AEAD) defined in TLS 1.2 <a href="#RFC5288">[RFC5288]</a>. Earlier versions of TLS do not have support for AEAD; for instance, the TLSCiphertext structure does not have the &#8220;aead&#8221; option in TLS 1.1. Consequently, these ciphersuites MUST NOT be negotiated in older versions of TLS. Clients MUST NOT offer these cipher suites if they do not offer TLS 1.2 or later. Servers which select an earlier version of TLS MUST NOT select one of these ciphersuites. A client MUST treat the selection of these cipher suites in combination with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error and generate a fatal &#8216;illegal_parameter&#8217; TLS alert.</p>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#intellectual-propery-rights-issues" id="intellectual-propery-rights-issues">Intellectual Propery Rights Issues</a></h1>
+<p id="rfc.section.6.p.1">Historically OCB Mode has seen difficulty with deployment and standardization because of pending patents and intellectual rights claims. In preparation of this document all interested parties have declared they will issue IPR statements exempting use of OCB Mode in TLS from these claims. Specifically &#8211; OCB Mode as described in this document for use in TLS &#8211; is based, and strongly influenced, by earlier work from Charanjit Jutla on <a href="#IAPM">[IAPM]</a>.</p>
+<h1 id="rfc.section.6.1"><a href="#rfc.section.6.1">6.1.</a> <a href="#ipr-claims" id="ipr-claims">IPR Claims</a></h1>
+<p id="rfc.section.6.1.p.1">The following parties have made IPR claims in the past:</p>
+<p/>
+
+<ul>
+  <li>US Patent No. 7,093, 126 (Issued Aug 15, 2006) [Filed April 14, 2000]. Inventor Name: Charanjit S. Jutla, Assignee: IBM</li>
+  <li>US Patent No. 6,963, 976 (Issued Nov 8, 2005) [Filed Nov 3, 2000]. Inventor Name: Charanjit S. Jutla, Assignee: IBM</li>
+</ul>
+<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
+<p id="rfc.section.7.p.1">IANA is requested to assign the values for the ciphersuites defined in <a href="#fssuites">Section 3</a> and <a href="#psksuites">Section 4</a> from the TLS and DTLS Ciphersuite registries. IANA, please note that the DTLS-OK column should be marked as &#8220;Y&#8221; for each of these algorithms.</p>
+<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#security-considerations" id="security-considerations">Security Considerations</a></h1>
+<p id="rfc.section.8.p.1">The security considerations in <a href="#RFC5246">[RFC5246]</a> apply to this document as well. The remainder of this section describes security considerations specific to the ciphersuites described in this document.</p>
+<h1 id="rfc.section.8.1"><a href="#rfc.section.8.1">8.1.</a> <a href="#perfect-forward-secrecy" id="perfect-forward-secrecy">(Perfect) Forward Secrecy</a></h1>
+<p id="rfc.section.8.1.p.1">With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in <a href="#psksuites">Section 4</a>, this document deals exclusively with ciphersuites that are inherently forward-secret.</p>
+<h1 id="rfc.section.8.2"><a href="#rfc.section.8.2">8.2.</a> <a href="#rsa-key-exchange" id="rsa-key-exchange">RSA key-exchange</a></h1>
+<p id="rfc.section.8.2.p.1">No ciphersuite is defined in this document that makes use of RSA as key-exchange.</p>
+<h1 id="rfc.section.8.3"><a href="#rfc.section.8.3">8.3.</a> <a href="#nonce-reuse" id="nonce-reuse">Nonce reuse</a></h1>
+<p id="rfc.section.8.3.p.1">AES-OCB security requires that the &#8220;nonce&#8221; (number used once) is never reused.  The IV construction in <a href="#fssuites">Section 3</a> is designed to prevent nonce reuse.</p>
+<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>
+<p id="rfc.section.9.p.1">This document borrows heavily from <a href="#RFC5288">[RFC5288]</a> and <a href="#RFC6655">[RFC6655]</a>.</p>
+<p id="rfc.section.9.p.2">The author would like to thank Martin Thompson for his suggested change on the client negotiation paragraph, Nikos Mavrogiannopoulos and Peter Gutmann for the discussion on PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length and the TLS Working Group in general for feedback and discussion on this document.</p>
+<h1 id="rfc.references"><a href="#rfc.references">10.</a> References</h1>
+<h1 id="rfc.references.1"><a href="#rfc.references.1">10.1.</a> Normative References</h1>
 <table>
   <tbody>
     <tr>
@@ -664,7 +678,7 @@ ul.toc a:first-child {
     </tr>
   </tbody>
 </table>
-<h1 id="rfc.references.2"><a href="#rfc.references.2">9.2.</a> Informative References</h1>
+<h1 id="rfc.references.2"><a href="#rfc.references.2">10.2.</a> Informative References</h1>
 <table>
   <tbody>
     <tr>
@@ -672,6 +686,12 @@ ul.toc a:first-child {
         <b id="AES">[AES]</b>
       </td>
       <td class="top"><a>National Institute of Standards and Technology</a>, "<a>Specification for the Advanced Encryption Standard (AES)</a>", NIST FIPS 197, November 2001.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="IAPM">[IAPM]</b>
+      </td>
+      <td class="top"><a>Jutla, C.</a>, "<a>Encryption Modes with Almost Free Message Integrity</a>", 2001.</td>
     </tr>
     <tr>
       <td class="reference">
