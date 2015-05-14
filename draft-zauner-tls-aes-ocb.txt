@@ -19,7 +19,8 @@ Abstract
    Security (TLS) and Datagram TLS (DTLS) to provide confidentiality and
    data origin authentication.  The AES-OCB algorithm is highly
    parallelizable, provable secure and can be efficiently implemented in
-   software and hardware providing high performance.
+   software and hardware providing high performance.  Furthermore, use
+   of AES-OCB in TLS is exempt from past IPR claims by various parties.
 
 Status of This Memo
 
@@ -49,7 +50,6 @@ Copyright Notice
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
-   include Simplified BSD License text as described in Section 4.e of
 
 
 
@@ -58,6 +58,7 @@ Zauner                    Expires July 30, 2015                 [Page 1]
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
 
+   include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
@@ -104,8 +105,7 @@ Table of Contents
    document utilizes the AEAD facility within TLS 1.2 [RFC5246] and the
    AES-OCB-based AEAD algorithms defined in [RFC5116] and [RFC7253].
 
-   The ciphersuites defined in this document use ECDHE, DHE or Pre-
-   Shared-Key (PSK) as their key establishment mechanism; these
+
 
 
 
@@ -114,6 +114,8 @@ Zauner                    Expires July 30, 2015                 [Page 2]
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
 
+   The ciphersuites defined in this document use ECDHE, DHE or Pre-
+   Shared-Key (PSK) as their key establishment mechanism; these
    ciphersuites can be used with DTLS [RFC6347].  Since the abiltiy to
    use AEAD ciphers was introduced in DTLS version 1.2, the ciphersuites
    defined in this document cannot be used with earlier versions of that
@@ -160,8 +162,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    presentation language.  All values are represented in big-endian form
    when constructing the AEAD input.
 
-   The sequence number of a message is always known to the receiver
-   through other means (either implicit protocol state or a per-message
 
 
 
@@ -170,6 +170,8 @@ Zauner                    Expires July 30, 2015                 [Page 3]
 Internet-Draft            AES-OCB Ciphersuites              January 2015
 
 
+   The sequence number of a message is always known to the receiver
+   through other means (either implicit protocol state or a per-message
    header in the case of DTLS), so the nonce construction used does not
    require any extra per-message information.  Thus the record_iv_length
    is zero (0) for all ciphersuites defined in this document.
@@ -214,8 +216,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    MUST treat the selection of these cipher suites in combination with a
    version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier)
    as an error and generate a fatal 'illegal_parameter' TLS alert.
-
-
 
 
 
