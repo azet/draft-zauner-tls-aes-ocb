@@ -76,7 +76,7 @@ efficiently implemented in software and hardware providing high performance.
 
 Furthermore OCB Mode {{OCB}} for AES {{AES}} provides a high performance, single-pass,
 constant-time AEAD alternative to existing and deployed block-cipher modes without the 
-need for special plattform specific instructions.
+need for special platform specific instructions.
 
 Authenticated encryption, in addition to providing confidentiality for the plaintext
 that is encrypted, provides a way to check its integrity and authenticity. Authenticated
