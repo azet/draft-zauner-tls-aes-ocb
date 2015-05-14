@@ -94,7 +94,7 @@ Table of Contents
 
    Furthermore OCB Mode [OCB] for AES [AES] provides a high performance,
    single-pass, constant-time AEAD alternative to existing and deployed
-   block-cipher modes without the need for special plattform specific
+   block-cipher modes without the need for special platform specific
    instructions.
 
    Authenticated encryption, in addition to providing confidentiality
@@ -345,7 +345,8 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
               (AES)", NIST FIPS 197, November 2001.
 
    [IAPM]     Jutla, C., "Encryption Modes with Almost Free Message
-              Integrity", 2001.
+              Integrity", EUROCRYPT01 Proc. Eurocrypt 2001, pp. 529-544,
+              2001.
 
    [OCB]      Rogaway, P., Bellare, M., and J. Black, "OCB: A Block-
               Cipher Mode of Operation for Efficient Authenticated
@@ -362,7 +363,6 @@ Author's Address
    Independent
 
    Email: azet@azet.org
-
 
 
 
