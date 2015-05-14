@@ -50,7 +50,11 @@ informative:
     seriesinfo:
       CCS01: ACM Conference on Computer and Communications Security (CCS ’01), ACM Press, pp. 196-205
     date: 2001
-
+  IAPM:
+    title: "Encryption Modes with Almost Free Message Integrity"
+    author:
+      - ins: C. Jutla
+    date: 2001
 
 --- abstract
 This memo describes the use of the Advanced Encryption Standard (AES)
@@ -161,6 +165,21 @@ later. Servers which select an earlier version of TLS MUST NOT select one of the
 ciphersuites. A client MUST treat the selection of these cipher suites in combination
 with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error 
 and generate a fatal 'illegal_parameter' TLS alert.
+
+# Intellectual Propery Rights Issues
+Historically OCB Mode has seen difficulty with deployment and
+standardization because of pending patents and intellectual rights
+claims. In preparation of this document all interested parties have
+declared they will issue IPR statements exempting use of OCB Mode in TLS
+from these claims. Specifically -- OCB Mode as described in this
+document for use in TLS -- is based, and strongly influenced, by earlier
+work from Charanjit Jutla on {{IAPM}}.
+
+## IPR Claims
+The following parties have made IPR claims in the past:
+
+  * US Patent No. 7,093, 126 (Issued Aug 15, 2006) [Filed April 14, 2000]. Inventor Name: Charanjit S. Jutla, Assignee: IBM
+  * US Patent No. 6,963, 976 (Issued Nov 8, 2005) [Filed Nov 3, 2000]. Inventor Name: Charanjit S. Jutla, Assignee: IBM
 
 # IANA Considerations
 IANA is requested to assign the values for the ciphersuites defined in {{fssuites}}
