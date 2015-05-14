@@ -195,8 +195,8 @@ ciphersuites described in this document.
 With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in {{psksuites}},
 this document deals exclusively with ciphersuites that are inherently forward-secret.
 
-## RSA key-exchange
-No ciphersuite is defined in this document that makes use of RSA as key-exchange.
+## Static RSA Key-Transport
+No ciphersuite is defined in this document that makes use of RSA as Key-Transport.
 
 ## Nonce reuse
 AES-OCB security requires that the "nonce" (number used once) is never reused.
