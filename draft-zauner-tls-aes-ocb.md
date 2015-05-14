@@ -62,6 +62,7 @@ in the Offset Codebook Mode (OCB) of operation within Transport Layer Security (
 and Datagram TLS (DTLS) to provide confidentiality and data origin authentication.
 The AES-OCB algorithm is highly parallelizable, provable secure and can be
 efficiently implemented in software and hardware providing high performance.
+Furthermore, use of AES-OCB in TLS is exempt from past IPR claims by various parties.
 
 --- middle
 # Introduction
