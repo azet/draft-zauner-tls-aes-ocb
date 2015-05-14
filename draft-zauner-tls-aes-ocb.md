@@ -54,6 +54,8 @@ informative:
     title: "Encryption Modes with Almost Free Message Integrity"
     author:
       - ins: C. Jutla
+    seriesinfo:
+      EUROCRYPT01: Proc. Eurocrypt 2001, pp. 529-544
     date: 2001
 
 --- abstract
