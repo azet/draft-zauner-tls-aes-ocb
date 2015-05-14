@@ -463,7 +463,7 @@ ul.toc a:first-child {
 <link href="#rfc.section.7" rel="Chapter" title="7 IANA Considerations"/>
 <link href="#rfc.section.8" rel="Chapter" title="8 Security Considerations"/>
 <link href="#rfc.section.8.1" rel="Chapter" title="8.1 (Perfect) Forward Secrecy"/>
-<link href="#rfc.section.8.2" rel="Chapter" title="8.2 RSA key-exchange"/>
+<link href="#rfc.section.8.2" rel="Chapter" title="8.2 Static RSA Key-Transport"/>
 <link href="#rfc.section.8.3" rel="Chapter" title="8.3 Nonce reuse"/>
 <link href="#rfc.section.9" rel="Chapter" title="9 Acknowledgements"/>
 <link href="#rfc.references" rel="Chapter" title="10 References"/>
@@ -544,7 +544,7 @@ ul.toc a:first-child {
 </ul><li>7.   <a href="#rfc.section.7">IANA Considerations</a></li>
 <li>8.   <a href="#rfc.section.8">Security Considerations</a></li>
 <ul><li>8.1.   <a href="#rfc.section.8.1">(Perfect) Forward Secrecy</a></li>
-<li>8.2.   <a href="#rfc.section.8.2">RSA key-exchange</a></li>
+<li>8.2.   <a href="#rfc.section.8.2">Static RSA Key-Transport</a></li>
 <li>8.3.   <a href="#rfc.section.8.3">Nonce reuse</a></li>
 </ul><li>9.   <a href="#rfc.section.9">Acknowledgements</a></li>
 <li>10.   <a href="#rfc.references">References</a></li>
@@ -617,8 +617,8 @@ ul.toc a:first-child {
 <p id="rfc.section.8.p.1">The security considerations in <a href="#RFC5246">[RFC5246]</a> apply to this document as well. The remainder of this section describes security considerations specific to the ciphersuites described in this document.</p>
 <h1 id="rfc.section.8.1"><a href="#rfc.section.8.1">8.1.</a> <a href="#perfect-forward-secrecy" id="perfect-forward-secrecy">(Perfect) Forward Secrecy</a></h1>
 <p id="rfc.section.8.1.p.1">With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in <a href="#psksuites">Section 4</a>, this document deals exclusively with ciphersuites that are inherently forward-secret.</p>
-<h1 id="rfc.section.8.2"><a href="#rfc.section.8.2">8.2.</a> <a href="#rsa-key-exchange" id="rsa-key-exchange">RSA key-exchange</a></h1>
-<p id="rfc.section.8.2.p.1">No ciphersuite is defined in this document that makes use of RSA as key-exchange.</p>
+<h1 id="rfc.section.8.2"><a href="#rfc.section.8.2">8.2.</a> <a href="#static-rsa-key-transport" id="static-rsa-key-transport">Static RSA Key-Transport</a></h1>
+<p id="rfc.section.8.2.p.1">No ciphersuite is defined in this document that makes use of RSA as Key-Transport.</p>
 <h1 id="rfc.section.8.3"><a href="#rfc.section.8.3">8.3.</a> <a href="#nonce-reuse" id="nonce-reuse">Nonce reuse</a></h1>
 <p id="rfc.section.8.3.p.1">AES-OCB security requires that the &#8220;nonce&#8221; (number used once) is never reused.  The IV construction in <a href="#fssuites">Section 3</a> is designed to prevent nonce reuse.</p>
 <h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>

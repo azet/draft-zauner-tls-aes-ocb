@@ -73,7 +73,7 @@ Table of Contents
    7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
      8.1.  (Perfect) Forward Secrecy . . . . . . . . . . . . . . . .   5
-     8.2.  RSA key-exchange  . . . . . . . . . . . . . . . . . . . .   5
+     8.2.  Static RSA Key-Transport  . . . . . . . . . . . . . . . .   5
      8.3.  Nonce reuse . . . . . . . . . . . . . . . . . . . . . . .   6
    9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
@@ -266,10 +266,10 @@ Internet-Draft            AES-OCB Ciphersuites              January 2015
    in Section 4, this document deals exclusively with ciphersuites that
    are inherently forward-secret.
 
-8.2.  RSA key-exchange
+8.2.  Static RSA Key-Transport
 
    No ciphersuite is defined in this document that makes use of RSA as
-   key-exchange.
+   Key-Transport.
 
 
 
