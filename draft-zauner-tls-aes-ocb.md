@@ -179,8 +179,8 @@ work from Charanjit Jutla on {{IAPM}}.
 ## IPR Claims
 The following parties have made IPR claims in the past:
 
-  * US Patent No. 7,093, 126 (Issued Aug 15, 2006) [Filed April 14, 2000]. Inventor Name: Charanjit S. Jutla, Assignee: IBM
-  * US Patent No. 6,963, 976 (Issued Nov 8, 2005) [Filed Nov 3, 2000]. Inventor Name: Charanjit S. Jutla, Assignee: IBM
+  * US Patent No. 7,093, 126 (Issued Aug 15, 2006) - Filed April 14, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
+  * US Patent No. 6,963, 976 (Issued Nov 8, 2005) - Filed Nov 3, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
 
 # IANA Considerations
 IANA is requested to assign the values for the ciphersuites defined in {{fssuites}}
