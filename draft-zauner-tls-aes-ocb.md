@@ -71,9 +71,9 @@ and Datagram TLS (DTLS) to provide confidentiality and data origin authenticatio
 The AES-OCB algorithm is highly parallelizable, provable secure and can be
 efficiently implemented in software and hardware providing high performance.
 
-Furthermore OCB Mode {{OCB}} for AES {{AES}} provides a high performance, constant-time
-AEAD alternative to existing and deployed block-cipher modes without the need for
-special plattform specific instructions.
+Furthermore OCB Mode {{OCB}} for AES {{AES}} provides a high performance, single-pass,
+constant-time AEAD alternative to existing and deployed block-cipher modes without the 
+need for special plattform specific instructions.
 
 Authenticated encryption, in addition to providing confidentiality for the plaintext
 that is encrypted, provides a way to check its integrity and authenticity. Authenticated
@@ -195,7 +195,7 @@ ciphersuites described in this document.
 With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in {{psksuites}},
 this document deals exclusively with ciphersuites that are inherently forward-secret.
 
-## RSA as key-exchange
+## RSA key-exchange
 No ciphersuite is defined in this document that makes use of RSA as key-exchange.
 
 ## Nonce reuse
