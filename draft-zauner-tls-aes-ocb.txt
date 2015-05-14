@@ -94,7 +94,7 @@ Table of Contents
 
    Furthermore OCB Mode [OCB] for AES [AES] provides a high performance,
    single-pass, constant-time AEAD alternative to existing and deployed
-   block-cipher modes without the need for special platform specific
+   block-cipher modes without the need for special plattform specific
    instructions.
 
    Authenticated encryption, in addition to providing confidentiality
