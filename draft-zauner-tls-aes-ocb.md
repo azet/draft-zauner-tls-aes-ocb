@@ -172,8 +172,8 @@ and generate a fatal 'illegal_parameter' TLS alert.
 # Intellectual Propery Rights Issues
 Historically OCB Mode has seen difficulty with deployment and
 standardization because of pending patents and intellectual rights
-claims. In preparation of this document all interested parties have
-declared they will issue IPR statements exempting use of OCB Mode in TLS
+claims on OCB itself. In preparation of this document all interested parties
+have declared they will issue IPR statements exempting use of OCB Mode in TLS
 from these claims. Specifically -- OCB Mode as described in this
 document for use in TLS -- is based, and strongly influenced, by earlier
 work from Charanjit Jutla on {{IAPM}}.
@@ -181,8 +181,11 @@ work from Charanjit Jutla on {{IAPM}}.
 ## IPR Claims
 The following parties have made IPR claims in the past:
 
-  * US Patent No. 7,093, 126 (Issued Aug 15, 2006) - Filed April 14, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
-  * US Patent No. 6,963, 976 (Issued Nov 8, 2005) - Filed Nov 3, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
+  * US Patent No. 7,093,126 (Issued Aug 15, 2006) - Filed Apr 14, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
+  * US Patent No. 6,963,976 (Issued Nov 8, 2005) - Filed Nov 3, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
+  * US Patent No. 7,046,802 (Issued May 16, 2006) - Filed 30 Jul 2001. Inventor Name: Phillip W. Rogaway, Assignee: Rogaway Phillip W
+  * US Patent No. 7,200,227 (Issued Apr 3, 2007) - Filed 18 Jul 2005. Inventor Name: Phillip Rogaway, Assignee: Phillip Rogaway
+  * US Patent No. 7,949,129 (Issued May 24, 2011) - Filed 23 Mar 2007. Inventor Name: Phillip W. Rogaway, Assignee: Rogaway Phillip W
 
 # IANA Considerations
 IANA is requested to assign the values for the ciphersuites defined in {{fssuites}}
