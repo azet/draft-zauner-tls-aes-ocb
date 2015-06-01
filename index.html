@@ -472,7 +472,7 @@ ul.toc a:first-child {
 <link href="#rfc.authors" rel="Chapter"/>
 
 
-  <meta name="generator" content="xml2rfc version 2.4.12 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.5.0 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Zauner, A." />
@@ -557,7 +557,7 @@ ul.toc a:first-child {
 
   <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
 <p id="rfc.section.1.p.1">This document describes the use of the Advanced Encryption Standard (AES) in the Offset Codebook Mode (OCB) of operation within Transport Layer Security (TLS) and Datagram TLS (DTLS) to provide confidentiality and data origin authentication.  The AES-OCB algorithm is highly parallelizable, provable secure and can be efficiently implemented in software and hardware providing high performance.</p>
-<p id="rfc.section.1.p.2">Furthermore OCB Mode <a href="#OCB">[OCB]</a> for AES <a href="#AES">[AES]</a> provides a high performance, single-pass, constant-time AEAD alternative to existing and deployed block-cipher modes without the need for special plattform specific instructions.</p>
+<p id="rfc.section.1.p.2">Furthermore OCB Mode <a href="#OCB">[OCB]</a> for AES <a href="#AES">[AES]</a> provides a high performance, single-pass, constant-time AEAD alternative to existing and deployed block-cipher modes without the need for special platform specific instructions.</p>
 <p id="rfc.section.1.p.3">Authenticated encryption, in addition to providing confidentiality for the plaintext that is encrypted, provides a way to check its integrity and authenticity. Authenticated Encryption with Associated Data, or AEAD <a href="#RFC5116">[RFC5116]</a>, adds the ability to check the integrity and authenticity of some associated data that is not encrypted. This document utilizes the AEAD facility within TLS 1.2 <a href="#RFC5246">[RFC5246]</a> and the AES-OCB-based AEAD algorithms defined in <a href="#RFC5116">[RFC5116]</a> and <a href="#RFC7253">[RFC7253]</a>.</p>
 <p id="rfc.section.1.p.4">The ciphersuites defined in this document use ECDHE, DHE or Pre-Shared-Key (PSK) as their key establishment mechanism; these ciphersuites can be used with DTLS <a href="#RFC6347">[RFC6347]</a>. Since the abiltiy to use AEAD ciphers was introduced in DTLS version 1.2, the ciphersuites defined in this document cannot be used with earlier versions of that protocol.</p>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#conventions-used-in-this-document" id="conventions-used-in-this-document">Conventions Used in This Document</a></h1>
@@ -602,14 +602,17 @@ ul.toc a:first-child {
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#applicable-tls-versions" id="applicable-tls-versions">Applicable TLS Versions</a></h1>
 <p id="rfc.section.5.p.1">These ciphersuites make use of the authenticated encryption with associated data (AEAD) defined in TLS 1.2 <a href="#RFC5288">[RFC5288]</a>. Earlier versions of TLS do not have support for AEAD; for instance, the TLSCiphertext structure does not have the &#8220;aead&#8221; option in TLS 1.1. Consequently, these ciphersuites MUST NOT be negotiated in older versions of TLS. Clients MUST NOT offer these cipher suites if they do not offer TLS 1.2 or later. Servers which select an earlier version of TLS MUST NOT select one of these ciphersuites. A client MUST treat the selection of these cipher suites in combination with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error and generate a fatal &#8216;illegal_parameter&#8217; TLS alert.</p>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#intellectual-propery-rights-issues" id="intellectual-propery-rights-issues">Intellectual Propery Rights Issues</a></h1>
-<p id="rfc.section.6.p.1">Historically OCB Mode has seen difficulty with deployment and standardization because of pending patents and intellectual rights claims. In preparation of this document all interested parties have declared they will issue IPR statements exempting use of OCB Mode in TLS from these claims. Specifically &#8211; OCB Mode as described in this document for use in TLS &#8211; is based, and strongly influenced, by earlier work from Charanjit Jutla on <a href="#IAPM">[IAPM]</a>.</p>
+<p id="rfc.section.6.p.1">Historically OCB Mode has seen difficulty with deployment and standardization because of pending patents and intellectual rights claims on OCB itself. In preparation of this document all interested parties have declared they will issue IPR statements exempting use of OCB Mode in TLS from these claims. Specifically &#8211; OCB Mode as described in this document for use in TLS &#8211; is based, and strongly influenced, by earlier work from Charanjit Jutla on <a href="#IAPM">[IAPM]</a>.</p>
 <h1 id="rfc.section.6.1"><a href="#rfc.section.6.1">6.1.</a> <a href="#ipr-claims" id="ipr-claims">IPR Claims</a></h1>
 <p id="rfc.section.6.1.p.1">The following parties have made IPR claims in the past:</p>
 <p/>
 
 <ul>
-  <li>US Patent No. 7,093, 126 (Issued Aug 15, 2006) - Filed April 14, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM</li>
-  <li>US Patent No. 6,963, 976 (Issued Nov 8, 2005) - Filed Nov 3, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM</li>
+  <li>US Patent No. 7,093,126 (Issued Aug 15, 2006) - Filed Apr 14, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM</li>
+  <li>US Patent No. 6,963,976 (Issued Nov 8, 2005) - Filed Nov 3, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM</li>
+  <li>US Patent No. 7,046,802 (Issued May 16, 2006) - Filed 30 Jul 2001. Inventor Name: Phillip W. Rogaway, Assignee: Rogaway Phillip W</li>
+  <li>US Patent No. 7,200,227 (Issued Apr 3, 2007) - Filed 18 Jul 2005. Inventor Name: Phillip Rogaway, Assignee: Phillip Rogaway</li>
+  <li>US Patent No. 7,949,129 (Issued May 24, 2011) - Filed 23 Mar 2007. Inventor Name: Phillip W. Rogaway, Assignee: Rogaway Phillip W</li>
 </ul>
 <h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
 <p id="rfc.section.7.p.1">IANA is requested to assign the values for the ciphersuites defined in <a href="#fssuites">Section 3</a> and <a href="#psksuites">Section 4</a> from the TLS and DTLS Ciphersuite registries. IANA, please note that the DTLS-OK column should be marked as &#8220;Y&#8221; for each of these algorithms.</p>
