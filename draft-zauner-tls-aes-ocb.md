@@ -27,20 +27,9 @@ normative:
   RFC4279:
   RFC2119:
   RFC5288:
-  RFC6655:
   RFC6066:
   RFC4279:
   RFC6347:
-
-informative:
-  RFC7253:
-  AES:
-    title: Specification for the Advanced Encryption Standard (AES)
-    date: 2001-11-26
-    author:
-      org: National Institute of Standards and Technology
-    seriesinfo:
-      NIST: FIPS 197
   OCB:
     title: "OCB: A Block-Cipher Mode of Operation for Efficient Authenticated Encryption"
     author:
@@ -49,7 +38,18 @@ informative:
       - ins: J. Black
     seriesinfo:
       CCS01: ACM Conference on Computer and Communications Security (CCS ’01), ACM Press, pp. 196-205
-    date: 2001
+      date: 2001
+
+informative:
+  RFC6655:
+  RFC7253:
+  AES:
+    title: Specification for the Advanced Encryption Standard (AES)
+    date: 2001-11-26
+    author:
+      org: National Institute of Standards and Technology
+    seriesinfo:
+      NIST: FIPS 197
   IAPM:
     title: "Encryption Modes with Almost Free Message Integrity"
     author:
