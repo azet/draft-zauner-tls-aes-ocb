@@ -21,6 +21,7 @@ author:
     email: azet@azet.org
 
 normative:
+  RFC7253:
   RFC5246:
   RFC6066:
   RFC5116:
@@ -42,7 +43,6 @@ normative:
 
 informative:
   RFC6655:
-  RFC7253:
   AES:
     title: Specification for the Advanced Encryption Standard (AES)
     date: 2001-11-26
