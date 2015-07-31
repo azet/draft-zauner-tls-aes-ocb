@@ -110,8 +110,9 @@ in {{RFC7253}}. The following forward-secret ciphersuites are defined:
 
 These ciphersuites make use of the AEAD capability in TLS 1.2 {{RFC5246}}.
 
-Use of HMAC truncation in TLS (as specified in {{RFC6066}}) has no effect
-on the ciphersuites defined in this document.
+Because this document makes use of an AEAD construct, use of HMAC truncation 
+in TLS (as specified in {{RFC6066}}) has no effect on the ciphersuites defined
+herein.
 
 The "nonce" input to the AEAD algorithm is exactly that of {{RFC5288}}:
 the "nonce" SHALL be 12 bytes long and is constructed as follows:
