@@ -144,8 +144,9 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
    These ciphersuites make use of the AEAD capability in TLS 1.2
    [RFC5246].
 
-   Use of HMAC truncation in TLS (as specified in [RFC6066]) has no
-   effect on the ciphersuites defined in this document.
+   Because this document makes use of an AEAD construct, use of HMAC
+   truncation in TLS (as specified in [RFC6066]) has no effect on the
+   ciphersuites defined herein.
 
    The "nonce" input to the AEAD algorithm is exactly that of [RFC5288]:
    the "nonce" SHALL be 12 bytes long and is constructed as follows:
@@ -161,7 +162,6 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
    The nonce input to the AEAD is described above using the TLS
    presentation language.  All values are represented in big-endian form
    when constructing the AEAD input.
-
 
 
 
@@ -315,21 +315,21 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
               date 2001, n.d..
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
+              Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/
+              RFC2119, March 1997,
+              <http://www.rfc-editor.org/info/rfc2119>.
 
-   [RFC4279]  Eronen, P. and H. Tschofenig, "Pre-Shared Key Ciphersuites
-              for Transport Layer Security (TLS)", RFC 4279, December
-              2005.
+   [RFC4279]  Eronen, P., Ed. and H. Tschofenig, Ed., "Pre-Shared Key
+              Ciphersuites for Transport Layer Security (TLS)", RFC
+              4279, DOI 10.17487/RFC4279, December 2005,
+              <http://www.rfc-editor.org/info/rfc4279>.
 
    [RFC5116]  McGrew, D., "An Interface and Algorithms for Authenticated
-              Encryption", RFC 5116, January 2008.
+              Encryption", RFC 5116, DOI 10.17487/RFC5116, January 2008,
+              <http://www.rfc-editor.org/info/rfc5116>.
 
-   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
-              (TLS) Protocol Version 1.2", RFC 5246, August 2008.
 
-   [RFC5288]  Salowey, J., Choudhury, A., and D. McGrew, "AES Galois
-              Counter Mode (GCM) Cipher Suites for TLS", RFC 5288,
-              August 2008.
+
 
 
 
@@ -338,11 +338,24 @@ Zauner                  Expires December 3, 2015                [Page 6]
 Internet-Draft            AES-OCB Ciphersuites                 June 2015
 
 
-   [RFC6066]  Eastlake, D., "Transport Layer Security (TLS) Extensions:
-              Extension Definitions", RFC 6066, January 2011.
+   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
+              (TLS) Protocol Version 1.2", RFC 5246, DOI 10.17487/
+              RFC5246, August 2008,
+              <http://www.rfc-editor.org/info/rfc5246>.
+
+   [RFC5288]  Salowey, J., Choudhury, A., and D. McGrew, "AES Galois
+              Counter Mode (GCM) Cipher Suites for TLS", RFC 5288, DOI
+              10.17487/RFC5288, August 2008,
+              <http://www.rfc-editor.org/info/rfc5288>.
+
+   [RFC6066]  Eastlake 3rd, D., "Transport Layer Security (TLS)
+              Extensions: Extension Definitions", RFC 6066, DOI
+              10.17487/RFC6066, January 2011,
+              <http://www.rfc-editor.org/info/rfc6066>.
 
    [RFC6347]  Rescorla, E. and N. Modadugu, "Datagram Transport Layer
-              Security Version 1.2", RFC 6347, January 2012.
+              Security Version 1.2", RFC 6347, DOI 10.17487/RFC6347,
+              January 2012, <http://www.rfc-editor.org/info/rfc6347>.
 
 10.2.  Informative References
 
@@ -355,10 +368,13 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
               2001.
 
    [RFC6655]  McGrew, D. and D. Bailey, "AES-CCM Cipher Suites for
-              Transport Layer Security (TLS)", RFC 6655, July 2012.
+              Transport Layer Security (TLS)", RFC 6655, DOI 10.17487/
+              RFC6655, July 2012,
+              <http://www.rfc-editor.org/info/rfc6655>.
 
    [RFC7253]  Krovetz, T. and P. Rogaway, "The OCB Authenticated-
-              Encryption Algorithm", RFC 7253, May 2014.
+              Encryption Algorithm", RFC 7253, DOI 10.17487/RFC7253, May
+              2014, <http://www.rfc-editor.org/info/rfc7253>.
 
 Author's Address
 
@@ -366,22 +382,6 @@ Author's Address
    Independent
 
    Email: azet@azet.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

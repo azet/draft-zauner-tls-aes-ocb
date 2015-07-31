@@ -573,7 +573,7 @@ ul.toc a:first-child {
   CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_OCB = {TBD6, TBD6}
 </pre>
 <p id="rfc.section.3.p.2">These ciphersuites make use of the AEAD capability in TLS 1.2 <a href="#RFC5246">[RFC5246]</a>.</p>
-<p id="rfc.section.3.p.3">Use of HMAC truncation in TLS (as specified in <a href="#RFC6066">[RFC6066]</a>) has no effect on the ciphersuites defined in this document.</p>
+<p id="rfc.section.3.p.3">Because this document makes use of an AEAD construct, use of HMAC truncation in TLS (as specified in <a href="#RFC6066">[RFC6066]</a>) has no effect on the ciphersuites defined herein.</p>
 <p id="rfc.section.3.p.4">The &#8220;nonce&#8221; input to the AEAD algorithm is exactly that of <a href="#RFC5288">[RFC5288]</a>: the &#8220;nonce&#8221; SHALL be 12 bytes long and is constructed as follows:</p>
 <pre>
   struct {
@@ -641,43 +641,43 @@ ul.toc a:first-child {
       <td class="reference">
         <b id="RFC2119">[RFC2119]</b>
       </td>
-      <td class="top"><a href="mailto:sob@harvard.edu" title="Harvard University">Bradner, S.</a>, "<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>", BCP 14, RFC 2119, March 1997.</td>
+      <td class="top"><a>Bradner, S.</a>, "<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC4279">[RFC4279]</b>
       </td>
-      <td class="top"><a>Eronen, P.</a> and <a>H. Tschofenig</a>, "<a href="http://tools.ietf.org/html/rfc4279">Pre-Shared Key Ciphersuites for Transport Layer Security (TLS)</a>", RFC 4279, December 2005.</td>
+      <td class="top"><a>Eronen, P.</a> and <a>H. Tschofenig</a>, "<a href="http://tools.ietf.org/html/rfc4279">Pre-Shared Key Ciphersuites for Transport Layer Security (TLS)</a>", RFC 4279, DOI 10.17487/RFC4279, December 2005.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC5116">[RFC5116]</b>
       </td>
-      <td class="top"><a>McGrew, D.</a>, "<a href="http://tools.ietf.org/html/rfc5116">An Interface and Algorithms for Authenticated Encryption</a>", RFC 5116, January 2008.</td>
+      <td class="top"><a>McGrew, D.</a>, "<a href="http://tools.ietf.org/html/rfc5116">An Interface and Algorithms for Authenticated Encryption</a>", RFC 5116, DOI 10.17487/RFC5116, January 2008.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC5246">[RFC5246]</b>
       </td>
-      <td class="top"><a>Dierks, T.</a> and <a>E. Rescorla</a>, "<a href="http://tools.ietf.org/html/rfc5246">The Transport Layer Security (TLS) Protocol Version 1.2</a>", RFC 5246, August 2008.</td>
+      <td class="top"><a>Dierks, T.</a> and <a>E. Rescorla</a>, "<a href="http://tools.ietf.org/html/rfc5246">The Transport Layer Security (TLS) Protocol Version 1.2</a>", RFC 5246, DOI 10.17487/RFC5246, August 2008.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC5288">[RFC5288]</b>
       </td>
-      <td class="top"><a>Salowey, J.</a>, <a>Choudhury, A.</a> and <a>D. McGrew</a>, "<a href="http://tools.ietf.org/html/rfc5288">AES Galois Counter Mode (GCM) Cipher Suites for TLS</a>", RFC 5288, August 2008.</td>
+      <td class="top"><a>Salowey, J.</a>, <a>Choudhury, A.</a> and <a>D. McGrew</a>, "<a href="http://tools.ietf.org/html/rfc5288">AES Galois Counter Mode (GCM) Cipher Suites for TLS</a>", RFC 5288, DOI 10.17487/RFC5288, August 2008.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC6066">[RFC6066]</b>
       </td>
-      <td class="top"><a>Eastlake, D.</a>, "<a href="http://tools.ietf.org/html/rfc6066">Transport Layer Security (TLS) Extensions: Extension Definitions</a>", RFC 6066, January 2011.</td>
+      <td class="top"><a>Eastlake 3rd, D.</a>, "<a href="http://tools.ietf.org/html/rfc6066">Transport Layer Security (TLS) Extensions: Extension Definitions</a>", RFC 6066, DOI 10.17487/RFC6066, January 2011.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC6347">[RFC6347]</b>
       </td>
-      <td class="top"><a>Rescorla, E.</a> and <a>N. Modadugu</a>, "<a href="http://tools.ietf.org/html/rfc6347">Datagram Transport Layer Security Version 1.2</a>", RFC 6347, January 2012.</td>
+      <td class="top"><a>Rescorla, E.</a> and <a>N. Modadugu</a>, "<a href="http://tools.ietf.org/html/rfc6347">Datagram Transport Layer Security Version 1.2</a>", RFC 6347, DOI 10.17487/RFC6347, January 2012.</td>
     </tr>
   </tbody>
 </table>
@@ -700,13 +700,13 @@ ul.toc a:first-child {
       <td class="reference">
         <b id="RFC6655">[RFC6655]</b>
       </td>
-      <td class="top"><a>McGrew, D.</a> and <a>D. Bailey</a>, "<a href="http://tools.ietf.org/html/rfc6655">AES-CCM Cipher Suites for Transport Layer Security (TLS)</a>", RFC 6655, July 2012.</td>
+      <td class="top"><a>McGrew, D.</a> and <a>D. Bailey</a>, "<a href="http://tools.ietf.org/html/rfc6655">AES-CCM Cipher Suites for Transport Layer Security (TLS)</a>", RFC 6655, DOI 10.17487/RFC6655, July 2012.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="RFC7253">[RFC7253]</b>
       </td>
-      <td class="top"><a>Krovetz, T.</a> and <a>P. Rogaway</a>, "<a href="http://tools.ietf.org/html/rfc7253">The OCB Authenticated-Encryption Algorithm</a>", RFC 7253, May 2014.</td>
+      <td class="top"><a>Krovetz, T.</a> and <a>P. Rogaway</a>, "<a href="http://tools.ietf.org/html/rfc7253">The OCB Authenticated-Encryption Algorithm</a>", RFC 7253, DOI 10.17487/RFC7253, May 2014.</td>
     </tr>
   </tbody>
 </table>
