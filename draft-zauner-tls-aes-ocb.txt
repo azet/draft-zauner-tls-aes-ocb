@@ -308,12 +308,6 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
 
 10.1.  Normative References
 
-   [OCB]      Rogaway, P., Bellare, M., and J. Black, "OCB: A Block-
-              Cipher Mode of Operation for Efficient Authenticated
-              Encryption", CCS01 ACM Conference on Computer and
-              Communications Security (CCS '01), ACM Press, pp. 196-205,
-              date 2001, n.d..
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/
               RFC2119, March 1997,
@@ -328,6 +322,12 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
               Encryption", RFC 5116, DOI 10.17487/RFC5116, January 2008,
               <http://www.rfc-editor.org/info/rfc5116>.
 
+   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
+              (TLS) Protocol Version 1.2", RFC 5246, DOI 10.17487/
+              RFC5246, August 2008,
+              <http://www.rfc-editor.org/info/rfc5246>.
+
+
 
 
 
@@ -337,11 +337,6 @@ Zauner                  Expires December 3, 2015                [Page 6]
 
 Internet-Draft            AES-OCB Ciphersuites                 June 2015
 
-
-   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
-              (TLS) Protocol Version 1.2", RFC 5246, DOI 10.17487/
-              RFC5246, August 2008,
-              <http://www.rfc-editor.org/info/rfc5246>.
 
    [RFC5288]  Salowey, J., Choudhury, A., and D. McGrew, "AES Galois
               Counter Mode (GCM) Cipher Suites for TLS", RFC 5288, DOI
@@ -371,6 +366,12 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
               Integrity", EUROCRYPT01 Proc. Eurocrypt 2001, pp. 529-544,
               2001.
 
+   [OCB]      Rogaway, P., Bellare, M., and J. Black, "OCB: A Block-
+              Cipher Mode of Operation for Efficient Authenticated
+              Encryption", CCS01 ACM Conference on Computer and
+              Communications Security (CCS '01), ACM Press, pp. 196-205,
+              date 2001, n.d..
+
    [RFC6655]  McGrew, D. and D. Bailey, "AES-CCM Cipher Suites for
               Transport Layer Security (TLS)", RFC 6655, DOI 10.17487/
               RFC6655, July 2012,
@@ -382,7 +383,6 @@ Author's Address
    Independent
 
    Email: azet@azet.org
-
 
 
 
