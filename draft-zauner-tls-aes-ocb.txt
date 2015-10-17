@@ -297,7 +297,7 @@ Internet-Draft            AES-OCB Ciphersuites                 June 2015
 
    This document borrows heavily from [RFC5288] and [RFC6655].
 
-   The author would like to thank Martin Thompson for his suggested
+   The author would like to thank Martin Thomson for his suggested
    change on the client negotiation paragraph, Nikos Mavrogiannopoulos
    and Peter Gutmann for the discussion on PSK ciphersuites, Jack Lloyd
    for content on the clarification of the TLS Record IV length and the
