@@ -212,7 +212,7 @@ The IV construction in {{fssuites}} is designed to prevent nonce reuse.
 # Acknowledgements
 This document borrows heavily from {{RFC5288}} and {{RFC6655}}.
 
-The author would like to thank Martin Thompson for his suggested change on the client
+The author would like to thank Martin Thomson for his suggested change on the client
 negotiation paragraph, Nikos Mavrogiannopoulos and Peter Gutmann for the discussion on
 PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length
 and the TLS Working Group in general for feedback and discussion on this document.
