@@ -31,6 +31,7 @@ normative:
   RFC6066:
   RFC4279:
   RFC6347:
+  draft-ietf-tls-chacha20-poly1305-04:
 
 informative:
   RFC6655:
@@ -114,29 +115,24 @@ Because this document makes use of an AEAD construct, use of HMAC truncation
 in TLS (as specified in {{RFC6066}}) has no effect on the ciphersuites defined
 herein.
 
-The "nonce" input to the AEAD algorithm is exactly that of {{RFC5288}}:
-the "nonce" SHALL be 12 bytes long and is constructed as follows:
+The "nonce" construction is identical to that of {{draft-ietf-tls-chacha20-poly1305-04}}:
 
-      struct {
-         case client:
-            uint32 client_write_IV;  // low order 32-bits
-         case server:
-            uint32 server_write_IV;  // low order 32-bits
-         uint64 seq_num;
-      } OCBNonce.
+AES-OCB requires a 96-bit nonce, which is formed as follows:
 
-The nonce input to the AEAD is described above using the TLS
-presentation language. All values are represented in big-endian form
-when constructing the AEAD input.
+1. The 64-bit record sequence number is serialized as an 8-byte, big-endian value and padded on the left with four 0x00 bytes.
+2. The padded sequence number is XORed with the client_write_IV (when the client is sending) or server_write_IV (when the server is sending).
 
-The sequence number of a message is always known to the receiver
-through other means (either implicit protocol state or a per-message
-header in the case of DTLS), so the nonce construction used does not
-require any extra per-message information. Thus the record_iv_length
-is zero (0) for all ciphersuites defined in this document.
+In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the 48-bit seq_num.
 
-In DTLS, the 64-bit seq_num is the 16-bit epoch concatenated with the
-48-bit seq_num.
+This nonce construction is different from the one used with AES-GCM
+in TLS 1.2 but matches the scheme expected to be used in TLS 1.3.
+The nonce is constructed from the record sequence number and shared
+secret, both of which are known to the recipient.  The advantage is
+that no per-record, explicit nonce need be transmitted, which saves
+eight bytes per record and prevents implementations from mistakenly
+using a random nonce.  Thus, in the terms of [RFC5246],
+SecurityParameters.fixed_iv_length is twelve bytes and
+SecurityParameters.record_iv_length is zero bytes.
 
 These ciphersuites make use of the default TLS 1.2 Pseudorandom
 Function (PRF), which uses HMAC with the SHA-256 hash function.
