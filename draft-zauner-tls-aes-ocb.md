@@ -2,7 +2,7 @@
 title: AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 abbrev: AES-OCB Ciphersuites
 docname: draft-zauner-tls-aes-ocb-latest
-date: 2015-06-01
+date: 2016-01-01
 category: std
 
 ipr: #XXX/TODO: IPRs 560, 1591, 1682, 1683
@@ -31,7 +31,7 @@ normative:
   RFC6066:
   RFC4279:
   RFC6347:
-  draft-ietf-tls-chacha20-poly1305-04:
+[//]: # (  draft-ietf-tls-chacha20-poly1305-04: )
 
 informative:
   RFC6655:
@@ -115,7 +115,7 @@ Because this document makes use of an AEAD construct, use of HMAC truncation
 in TLS (as specified in {{RFC6066}}) has no effect on the ciphersuites defined
 herein.
 
-The "nonce" construction is identical to that of {{draft-ietf-tls-chacha20-poly1305-04}}:
+The "nonce" construction is identical to that of draft-ietf-tls-chacha20-poly1305-04:
 
 AES-OCB requires a 96-bit nonce, which is formed as follows:
 

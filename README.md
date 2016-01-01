@@ -1,24 +1,32 @@
 # AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 
+[![Travis-CI
+Status](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb.svg)](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb)
 
-[![](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb.svg)](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb)
+This is the working area for the Individual internet-draft, "AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)".
+
+* [Editor's copy](https://azet.github.io/draft-zauner-tls-aes-ocb/)
+* [Individual Draft] (https://tools.ietf.org/html/draft-zauner-tls-aes-ocb)
 
 
-This is the working area for the [IETF TLS Working
-Group](https://trac.tools.ietf.org/wg/tls) draft of
-AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS).
+## Building the Draft
 
+Formatted text and HTML versions of the draft can be built using `make`.
 
-* [Editor's copy](https://azet.github.io/draft-zauner-tls-aes-ocb)
-* [Working Group Draft]
-  (https://tools.ietf.org/html/draft-zauner-tls-aes-ocb)
+```sh
+$ make
+```
+
+This requires that you have the necessary software installed.  See [the
+instructions](https://github.com/martinthomson/i-d-template/blob/master/doc/SETUP.md).
 
 
 ## Contributing
 
 Before submitting feedback, please familiarize yourself with our current issues
-list and review the [working group home
-page](https://datatracker.ietf.org/wg/tls/charter/). If you're
+list and review the [working group
+documents](https://datatracker.ietf.org/wg/tls/documents/) and [mailing
+list discussion](https://mailarchive.ietf.org/arch/browse/tls/). If you're
 new to this, you may also want to read the [Tao of the
 IETF](https://www.ietf.org/tao.html).
 
@@ -26,8 +34,8 @@ Be aware that all contributions to the specification fall under the "NOTE WELL"
 terms outlined below.
 
 1. The best way to provide feedback (editorial or design) and ask questions is
-sending an e-mail to [our mailing
-list](https://www.ietf.org/mailman/listinfo/tls). This will ensure that
+sending an e-mail to our mailing list
+([info](https://www.ietf.org/mailman/listinfo/tls)). This will ensure that
 the entire Working Group sees your input in a timely fashion.
 
 2. If you have **editorial** suggestions (i.e., those that do not change the
@@ -50,26 +58,6 @@ providing a link to the issue in the message body.
 
   Note that **github issues are not for substantial discussions**; the only
   appropriate place to discuss design issues is on the mailing list itself.
-
-
-## Building the Draft
-
-In order to build a copy of the draft, you will need to install xml2rfc.  This
-requires Python 2.7 and can be installed using `pip`:
-
-```sh
-$ pip install xml2rfc
-```
-
-You may also need to install kramdown-xml2rfc, which requires Ruby and can be
-installed using the ruby package manager, `gem`:
-
-```sh
-$ gem install kramdown-xml2rfc
-```
-
-Other tools can be used to produce PDF files, or to provide a comparison.  These
-tools - and where to find them - are described in the `Makefile`.
 
 
 ## NOTE WELL
