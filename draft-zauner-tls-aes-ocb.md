@@ -5,7 +5,7 @@ docname: draft-zauner-tls-aes-ocb-latest
 date: 2016-01-01
 category: std
 
-ipr: #XXX/TODO: IPRs 560, 1591, 1682, 1683
+ipr: #2640 2647
 area: General
 workgroup: TLS Working Group
 keyword: Internet-Draft
@@ -17,7 +17,7 @@ author:
  -
     ins: A. Zauner
     name: Aaron Zauner
-    organization: Independent
+    organization: "lambda: resilient.systems"
     email: azet@azet.org
 
 normative:
@@ -31,7 +31,7 @@ normative:
   RFC6066:
   RFC4279:
   RFC6347:
-[//]: # (  draft-ietf-tls-chacha20-poly1305-04: )
+  draft-ietf-tls-chacha20-poly1305-04:
 
 informative:
   RFC6655:
@@ -49,7 +49,7 @@ informative:
       - ins: M. Bellare
       - ins: J. Black
     seriesinfo:
-      CCS01: ACM Conference on Computer and Communications Security (CCS ’01), ACM Press, pp. 196-205
+      CCS01: ACM Conference on Computer and Communications Security (CCS 2001), ACM Press, pp. 196-205
       date: 2001
   IAPM:
     title: "Encryption Modes with Almost Free Message Integrity"
@@ -58,6 +58,13 @@ informative:
     seriesinfo:
       EUROCRYPT01: Proc. Eurocrypt 2001, pp. 529-544
     date: 2001
+  AELIMIT:
+    title: Limits on Authenticated Encryption Use in TLS
+    author:
+      - ins: A. Luykx
+      - ins: K. Paterson
+    seriesinfo:
+      date: 2016-03-08
 
 --- abstract
 This memo describes the use of the Advanced Encryption Standard (AES)
@@ -65,7 +72,7 @@ in the Offset Codebook Mode (OCB) of operation within Transport Layer Security (
 and Datagram TLS (DTLS) to provide confidentiality and data origin authentication.
 The AES-OCB algorithm is highly parallelizable, provable secure and can be
 efficiently implemented in software and hardware providing high performance.
-Furthermore, use of AES-OCB in TLS is exempt from past IPR claims by various parties.
+Furthermore, use of AES-OCB in TLS is exempt from former IPR claims by various parties.
 
 --- middle
 # Introduction
@@ -163,19 +170,18 @@ in TLS 1.1. Consequently, these ciphersuites MUST NOT be negotiated in older ver
 of TLS. Clients MUST NOT offer these cipher suites if they do not offer TLS 1.2 or
 later. Servers which select an earlier version of TLS MUST NOT select one of these
 ciphersuites. A client MUST treat the selection of these cipher suites in combination
-with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error 
+with a version of TLS that does not support AEAD (i.e., TLS 1.1 or earlier) as an error
 and generate a fatal 'illegal_parameter' TLS alert.
 
-# Intellectual Propery Rights Issues
-Historically OCB Mode has seen difficulty with deployment and
-standardization because of pending patents and intellectual rights
-claims on OCB itself. In preparation of this document all interested parties
-have declared they will issue IPR statements exempting use of OCB Mode in TLS
-from these claims. Specifically -- OCB Mode as described in this
-document for use in TLS -- is based, and strongly influenced, by earlier
-work from Charanjit Jutla on {{IAPM}}.
+# Intellectual Property Rights
+Historically Offset Codebook Mode has seen difficulty with implementation, deployment
+and standardization because of pending patents and intellectual rights claims on OCB
+itself. In preparation of this document all involved parties have declared they will
+issue IPR statements exempting use of OCB Mode in TLS from these claims.
+Specifically -- OCB Mode as described in this document for use in TLS -- is based, and
+strongly influenced, by earlier work from Charanjit Jutla on {{IAPM}}.
 
-## IPR Claims
+## Resolved IPR Claims
 The following parties have made IPR claims in the past:
 
   * US Patent No. 7,093,126 (Issued Aug 15, 2006) - Filed Apr 14, 2000. Inventor Name: Charanjit S. Jutla, Assignee: IBM
@@ -183,6 +189,9 @@ The following parties have made IPR claims in the past:
   * US Patent No. 7,046,802 (Issued May 16, 2006) - Filed 30 Jul 2001. Inventor Name: Phillip W. Rogaway, Assignee: Rogaway Phillip W
   * US Patent No. 7,200,227 (Issued Apr 3, 2007) - Filed 18 Jul 2005. Inventor Name: Phillip Rogaway, Assignee: Phillip Rogaway
   * US Patent No. 7,949,129 (Issued May 24, 2011) - Filed 23 Mar 2007. Inventor Name: Phillip W. Rogaway, Assignee: Rogaway Phillip W
+
+  Use of technology described by these patents, when used with TLS, has been explicitly
+  exempted from any previous claims by the original authors and patent holders.
 
 # IANA Considerations
 IANA is requested to assign the values for the ciphersuites defined in {{fssuites}}
@@ -197,18 +206,32 @@ ciphersuites described in this document.
 ## (Perfect) Forward Secrecy
 With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in {{psksuites}},
 this document deals exclusively with ciphersuites that are inherently forward-secret.
+These nonephemeral ciphersuites have been added to accomodate embedded/IoT applications.
 
-## Static RSA Key-Transport
+## Static RSA Key-transport
 No ciphersuite is defined in this document that makes use of RSA as Key-Transport.
 
 ## Nonce reuse
 AES-OCB security requires that the "nonce" (number used once) is never reused.
 The IV construction in {{fssuites}} is designed to prevent nonce reuse.
+Specifically, if there is any error in the nonce construction implementation,
+it will simply be non-interoperable with conforming implementations.
+
+## Data volume limit under a single key
+There is a limitation on the total number of bytes that can be
+transmitted under one set of keys. For the AES-OCB ciphersuites,
+implementations MUST NOT transmit more than 2^36 bytes encrypted
+under a single key: they MUST rekey or close the connection before
+2^36 bytes are reached. These limitations are based on limitations
+introduced in the TLS 1.3 draft for AES-GCM, this document adheres to
+the same constraints. A detailed analysis can be found in {{AELIMIT}}.
 
 # Acknowledgements
-This document borrows heavily from {{RFC5288}} and {{RFC6655}}.
+This document borrows heavily from {{RFC5288}}, {{RFC6655}} and 
+draft-ietf-tls-chacha20-poly1305-04.
 
 The author would like to thank Martin Thomson for his suggested change on the client
 negotiation paragraph, Nikos Mavrogiannopoulos and Peter Gutmann for the discussion on
-PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length
+PSK ciphersuites, Jack Lloyd for content on the clarification of the TLS Record IV length,
+Samuel Neves for suggesting the data-limitation paragraph from the TLS 1.3 draft
 and the TLS Working Group in general for feedback and discussion on this document.
