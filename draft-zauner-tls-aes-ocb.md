@@ -2,7 +2,7 @@
 title: AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 abbrev: AES-OCB Ciphersuites
 docname: draft-zauner-tls-aes-ocb-latest
-date: 2016-01-01
+date: 2016-04-04
 category: std
 
 ipr: #2640 2647
