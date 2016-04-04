@@ -1,8 +1,5 @@
 # AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)
 
-[![Travis-CI
-Status](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb.svg)](https://travis-ci.org/azet/draft-zauner-tls-aes-ocb)
-
 This is the working area for the Individual internet-draft, "AES-OCB (Offset Codebook Mode) Ciphersuites for Transport Layer Security (TLS)".
 
 * [Editor's copy](https://azet.github.io/draft-zauner-tls-aes-ocb/)
