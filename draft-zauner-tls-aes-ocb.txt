@@ -3,7 +3,7 @@
 
 
 TLS Working Group                                              A. Zauner
-Internet-Draft                                               Independent
+Internet-Draft                                 lambda: resilient.systems
 Intended status: Standards Track                        January 01, 2016
 Expires: July 4, 2016
 
@@ -20,7 +20,8 @@ Abstract
    data origin authentication.  The AES-OCB algorithm is highly
    parallelizable, provable secure and can be efficiently implemented in
    software and hardware providing high performance.  Furthermore, use
-   of AES-OCB in TLS is exempt from past IPR claims by various parties.
+   of AES-OCB in TLS is exempt from former IPR claims by various
+   parties.
 
 Status of This Memo
 
@@ -49,7 +50,6 @@ Copyright Notice
    (http://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
-   to this document.  Code Components extracted from this document must
 
 
 
@@ -58,6 +58,7 @@ Zauner                    Expires July 4, 2016                  [Page 1]
 Internet-Draft            AES-OCB Ciphersuites              January 2016
 
 
+   to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
@@ -69,18 +70,19 @@ Table of Contents
    3.  Forward-secret AES-OCB Ciphersuites . . . . . . . . . . . . .   3
    4.  Pre-Shared-Key (PSK) AES-OCB Ciphersuites . . . . . . . . . .   4
    5.  Applicable TLS Versions . . . . . . . . . . . . . . . . . . .   4
-   6.  Intellectual Propery Rights Issues  . . . . . . . . . . . . .   5
-     6.1.  IPR Claims  . . . . . . . . . . . . . . . . . . . . . . .   5
+   6.  Intellectual Property Rights  . . . . . . . . . . . . . . . .   5
+     6.1.  Resolved IPR Claims . . . . . . . . . . . . . . . . . . .   5
    7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
-     8.1.  (Perfect) Forward Secrecy . . . . . . . . . . . . . . . .   5
-     8.2.  Static RSA Key-Transport  . . . . . . . . . . . . . . . .   6
+     8.1.  (Perfect) Forward Secrecy . . . . . . . . . . . . . . . .   6
+     8.2.  Static RSA Key-transport  . . . . . . . . . . . . . . . .   6
      8.3.  Nonce reuse . . . . . . . . . . . . . . . . . . . . . . .   6
+     8.4.  Data volume limit under a single key  . . . . . . . . . .   6
    9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     10.1.  Normative References . . . . . . . . . . . . . . . . . .   6
+     10.1.  Normative References . . . . . . . . . . . . . . . . . .   7
      10.2.  Informative References . . . . . . . . . . . . . . . . .   7
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -104,8 +106,6 @@ Table of Contents
    authenticity of some associated data that is not encrypted.  This
    document utilizes the AEAD facility within TLS 1.2 [RFC5246] and the
    AES-OCB-based AEAD algorithms defined in [RFC5116] and [RFC7253].
-
-
 
 
 
@@ -226,17 +226,18 @@ Zauner                    Expires July 4, 2016                  [Page 4]
 Internet-Draft            AES-OCB Ciphersuites              January 2016
 
 
-6.  Intellectual Propery Rights Issues
+6.  Intellectual Property Rights
 
-   Historically OCB Mode has seen difficulty with deployment and
-   standardization because of pending patents and intellectual rights
-   claims on OCB itself.  In preparation of this document all interested
-   parties have declared they will issue IPR statements exempting use of
-   OCB Mode in TLS from these claims.  Specifically - OCB Mode as
-   described in this document for use in TLS - is based, and strongly
-   influenced, by earlier work from Charanjit Jutla on [IAPM].
+   Historically Offset Codebook Mode has seen difficulty with
+   implementation, deployment and standardization because of pending
+   patents and intellectual rights claims on OCB itself.  In preparation
+   of this document all involved parties have declared they will issue
+   IPR statements exempting use of OCB Mode in TLS from these claims.
+   Specifically - OCB Mode as described in this document for use in TLS
+   - is based, and strongly influenced, by earlier work from Charanjit
+   Jutla on [IAPM].
 
-6.1.  IPR Claims
+6.1.  Resolved IPR Claims
 
    The following parties have made IPR claims in the past:
 
@@ -255,6 +256,10 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
    o  US Patent No. 7,949,129 (Issued May 24, 2011) - Filed 23 Mar 2007.
       Inventor Name: Phillip W.  Rogaway, Assignee: Rogaway Phillip W
 
+   Use of technology described by these patents, when used with TLS, has
+   been explicitly exempted from any previous claims by the original
+   authors and patent holders.
+
 7.  IANA Considerations
 
    IANA is requested to assign the values for the ciphersuites defined
@@ -269,11 +274,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
    considerations specific to the ciphersuites described in this
    document.
 
-8.1.  (Perfect) Forward Secrecy
-
-   With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined
-   in Section 4, this document deals exclusively with ciphersuites that
-   are inherently forward-secret.
 
 
 
@@ -282,7 +282,14 @@ Zauner                    Expires July 4, 2016                  [Page 5]
 Internet-Draft            AES-OCB Ciphersuites              January 2016
 
 
-8.2.  Static RSA Key-Transport
+8.1.  (Perfect) Forward Secrecy
+
+   With the exception of two Pre-Shared-Key (PSK) ciphersuites intended
+   for use in constrained environments and embedded devices (IoT),
+   defined in Section 4, this document deals exclusively with
+   ciphersuites that are inherently forward-secret.
+
+8.2.  Static RSA Key-transport
 
    No ciphersuite is defined in this document that makes use of RSA as
    Key-Transport.
@@ -291,20 +298,45 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
 
    AES-OCB security requires that the "nonce" (number used once) is
    never reused.  The IV construction in Section 3 is designed to
-   prevent nonce reuse.
+   prevent nonce reuse.  Specifically, if there is any error in the
+   nonce construction implementation, it will simply be non-
+   interoperable with conforming implementations.
+
+8.4.  Data volume limit under a single key
+
+   There is a limitation on the total number of bytes that can be
+   transmitted under one set of keys.  For the AES-OCB ciphersuites,
+   implementations MUST NOT transmit more than 2^36 bytes encrypted
+   under a single key: they MUST rekey or close the connection before
+   2^36 bytes are reached.  These limitations are based on limitations
+   introduced in the TLS 1.3 draft for AES-GCM, this document adheres to
+   the same constraints.  A detailed analysis can be found in [AELIMIT].
 
 9.  Acknowledgements
 
-   This document borrows heavily from [RFC5288] and [RFC6655].
+   This document borrows heavily from [RFC5288], [RFC6655] and draft-
+   ietf-tls-chacha20-poly1305-04.
 
    The author would like to thank Martin Thomson for his suggested
    change on the client negotiation paragraph, Nikos Mavrogiannopoulos
    and Peter Gutmann for the discussion on PSK ciphersuites, Jack Lloyd
-   for content on the clarification of the TLS Record IV length and the
-   TLS Working Group in general for feedback and discussion on this
-   document.
+   for content on the clarification of the TLS Record IV length, Samuel
+   Neves for suggesting the data-limitation paragraph from the TLS 1.3
+   draft and the TLS Working Group in general for feedback and
+   discussion on this document.
 
 10.  References
+
+
+
+
+
+
+
+Zauner                    Expires July 4, 2016                  [Page 6]
+
+Internet-Draft            AES-OCB Ciphersuites              January 2016
+
 
 10.1.  Normative References
 
@@ -327,17 +359,6 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
               RFC5246, August 2008,
               <http://www.rfc-editor.org/info/rfc5246>.
 
-
-
-
-
-
-
-Zauner                    Expires July 4, 2016                  [Page 6]
-
-Internet-Draft            AES-OCB Ciphersuites              January 2016
-
-
    [RFC5288]  Salowey, J., Choudhury, A., and D. McGrew, "AES Galois
               Counter Mode (GCM) Cipher Suites for TLS", RFC 5288, DOI
               10.17487/RFC5288, August 2008,
@@ -358,9 +379,20 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
 
 10.2.  Informative References
 
+   [AELIMIT]  Luykx, A. and K. Paterson, "Limits on Authenticated
+              Encryption Use in TLS", date 2016-03-08, n.d..
+
    [AES]      National Institute of Standards and Technology,
               "Specification for the Advanced Encryption Standard
               (AES)", NIST FIPS 197, November 2001.
+
+
+
+
+Zauner                    Expires July 4, 2016                  [Page 7]
+
+Internet-Draft            AES-OCB Ciphersuites              January 2016
+
 
    [IAPM]     Jutla, C., "Encryption Modes with Almost Free Message
               Integrity", EUROCRYPT01 Proc. Eurocrypt 2001, pp. 529-544,
@@ -369,8 +401,8 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
    [OCB]      Rogaway, P., Bellare, M., and J. Black, "OCB: A Block-
               Cipher Mode of Operation for Efficient Authenticated
               Encryption", CCS01 ACM Conference on Computer and
-              Communications Security (CCS '01), ACM Press, pp. 196-205,
-              date 2001, n.d..
+              Communications Security (CCS 2001), ACM Press, pp.
+              196-205, date 2001, n.d..
 
    [RFC6655]  McGrew, D. and D. Bailey, "AES-CCM Cipher Suites for
               Transport Layer Security (TLS)", RFC 6655, DOI 10.17487/
@@ -380,7 +412,7 @@ Internet-Draft            AES-OCB Ciphersuites              January 2016
 Author's Address
 
    Aaron Zauner
-   Independent
+   lambda: resilient.systems
 
    Email: azet@azet.org
 
@@ -389,4 +421,28 @@ Author's Address
 
 
 
-Zauner                    Expires July 4, 2016                  [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zauner                    Expires July 4, 2016                  [Page 8]
