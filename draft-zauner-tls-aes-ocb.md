@@ -204,9 +204,9 @@ remainder of this section describes security considerations specific to the
 ciphersuites described in this document.
 
 ## (Perfect) Forward Secrecy
-With the exception of two Pre-Shared-Key (PSK) ciphersuites, defined in {{psksuites}},
+With the exception of two Pre-Shared-Key (PSK) ciphersuites intended for use in
+constrained environments and embedded devices (IoT), defined in {{psksuites}},
 this document deals exclusively with ciphersuites that are inherently forward-secret.
-These nonephemeral ciphersuites have been added to accomodate embedded/IoT applications.
 
 ## Static RSA Key-transport
 No ciphersuite is defined in this document that makes use of RSA as Key-Transport.
