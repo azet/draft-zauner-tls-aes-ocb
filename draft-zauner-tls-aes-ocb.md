@@ -95,7 +95,7 @@ algorithms defined in {{RFC5116}} and {{RFC7253}}.
 
 The ciphersuites defined in this document use ECDHE, DHE or Pre-Shared-Key (PSK) as their
 key establishment mechanism; these ciphersuites can be used with DTLS {{RFC6347}}. Since
-the abiltiy to use AEAD ciphers was introduced in DTLS version 1.2, the ciphersuites defined
+the ability to use AEAD ciphers was introduced in DTLS version 1.2, the ciphersuites defined
 in this document cannot be used with earlier versions of that protocol.
 
 # Conventions Used in This Document
